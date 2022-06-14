@@ -1,5 +1,5 @@
 /*
-Copyright 2022 DigitalOcean
+Copyright 2021 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,10 +24,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import { info } from '../util/log';
-
 const originalSrcDir = document.currentScript.src.split('/').slice(0, -2).join('/') + '/';
 window.__webpackDynamicImportURL = () => {
-    info(`Using ${originalSrcDir} for webpack dynamic import`);
+    console.info(`Using ${originalSrcDir} for webpack dynamic import`);
     return originalSrcDir;
 };

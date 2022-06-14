@@ -24,7 +24,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
 import WebpackRequireFrom from 'webpack-require-from';
@@ -48,8 +47,6 @@ export default {
                 );
             } },
             new WebpackRequireFrom({ methodName: '__webpackDynamicImportURL', suppressErrors: true }),
-            // Pass the env in for logging
-            new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
             // Analyze the bundle
             new BundleAnalyzerPlugin({ analyzerMode: 'static', openAnalyzer: false }),
             new DuplicatePackageCheckerPlugin(),

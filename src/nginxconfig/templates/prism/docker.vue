@@ -1,5 +1,5 @@
 <!--
-Copyright 2022 DigitalOcean
+Copyright 2021 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -33,7 +33,6 @@ THE SOFTWARE.
 
 <script>
     import 'prismjs/components/prism-docker';
-    import { info } from '../../util/log';
 
     export default {
         name: 'DockerPrism',
@@ -43,7 +42,7 @@ THE SOFTWARE.
             half: Boolean,
         },
         mounted() {
-            info(`Highlighting ${this.$props.name}...`);
+            console.info(`Highlighting ${this.$props.name}...`);
             window.Prism.highlightAllUnder(this.$el);
         },
         methods: {
