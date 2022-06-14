@@ -35,6 +35,7 @@ THE SOFTWARE.
                     <div :class="`control${gzipCompressionChanged ? ' is-changed' : ''}`">
                         <div class="checkbox">
                             <PrettyCheck v-model="gzipCompression" class="p-default p-curve p-fill p-icon">
+                                <i slot="extra" class="icon fas fa-check"></i>
                                 {{ $t('templates.globalSections.performance.enableGzipCompression') }}
                             </PrettyCheck>
                         </div>
@@ -52,6 +53,7 @@ THE SOFTWARE.
                     <div :class="`control${brotliCompressionChanged ? ' is-changed' : ''}`">
                         <div class="checkbox">
                             <PrettyCheck v-model="brotliCompression" class="p-default p-curve p-fill p-icon">
+                                <i slot="extra" class="icon fas fa-check"></i>
                                 {{ $t('templates.globalSections.performance.enableBrotliCompression') }}
                             </PrettyCheck>
                         </div>
@@ -148,10 +150,10 @@ THE SOFTWARE.
 </template>
 
 <script>
+    import PrettyCheck from 'pretty-checkbox-vue/check';
     import ExternalLink from 'do-vue/src/templates/external_link';
     import delegatedFromDefaults from '../../util/delegated_from_defaults';
     import computedFromDefaults from '../../util/computed_from_defaults';
-    import PrettyCheck from '../inputs/checkbox';
 
     const defaults = {
         gzipCompression: {
