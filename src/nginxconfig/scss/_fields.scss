@@ -26,7 +26,8 @@ THE SOFTWARE.
 
 .field-row {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 -.5rem;
 
   .field {
@@ -86,7 +87,7 @@ THE SOFTWARE.
 
   .is-changed {
     input {
-      &:not(.vs__search) { // stylelint-disable-line selector-class-pattern
+      &:not(.vs__search) {
         &,
         &:focus {
           background: rgba($highlight, .35);
@@ -107,7 +108,7 @@ THE SOFTWARE.
     }
 
     .v-select {
-      .vs__dropdown-toggle { // stylelint-disable-line selector-class-pattern
+      .vs__dropdown-toggle { // sass-lint:disable-line class-name-format
         background: rgba($highlight, .35);
       }
     }
